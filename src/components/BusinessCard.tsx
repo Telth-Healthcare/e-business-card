@@ -94,7 +94,7 @@ const BusinessCard = () => {
                             city="INDIA"
                             address="The Chambers"
                             street="3rd Floor, Nehru Place, New Delhi 110019"
-                            phone="+91 95145 55215"
+                            phone="+91 82877 77505"
                             delay="0.7s"
                         />
                         <LocationCard
