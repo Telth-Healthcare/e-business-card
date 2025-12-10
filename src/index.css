@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Deep purple theme matching the business card */
+    --background: 270 60% 12%;
+    --foreground: 45 90% 65%;
+
+    --card: 270 55% 15%;
+    --card-foreground: 45 90% 70%;
+
+    --popover: 270 55% 15%;
+    --popover-foreground: 45 90% 70%;
+
+    /* Gold/Amber primary color */
+    --primary: 42 85% 55%;
+    --primary-foreground: 270 60% 8%;
+
+    /* Purple secondary */
+    --secondary: 270 45% 25%;
+    --secondary-foreground: 45 80% 80%;
+
+    /* Muted purple */
+    --muted: 270 40% 20%;
+    --muted-foreground: 270 20% 70%;
+
+    /* Purple accent */
+    --accent: 280 50% 30%;
+    --accent-foreground: 45 90% 80%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 40% 25%;
+    --input: 270 40% 25%;
+    --ring: 42 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens */
+    --gold: 42 85% 55%;
+    --gold-light: 45 90% 70%;
+    --gold-glow: 42 85% 45%;
+    
+    --purple-deep: 270 60% 10%;
+    --purple-rich: 270 55% 18%;
+    --purple-mid: 270 45% 28%;
+    --purple-accent: 280 50% 35%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(42 85% 55%), hsl(35 90% 60%));
+    --gradient-purple: linear-gradient(135deg, hsl(270 60% 12%), hsl(280 55% 20%));
+    --gradient-diagonal: linear-gradient(135deg, hsl(270 60% 8%) 0%, hsl(270 55% 15%) 50%, hsl(280 50% 20%) 100%);
+    
+    /* Shadows */
+    --shadow-gold: 0 4px 30px hsl(42 85% 55% / 0.2);
+    --shadow-deep: 0 10px 40px hsl(270 60% 5% / 0.5);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 270 55% 15%;
+    --sidebar-foreground: 45 90% 70%;
+    --sidebar-primary: 42 85% 55%;
+    --sidebar-primary-foreground: 270 60% 8%;
+    --sidebar-accent: 280 50% 30%;
+    --sidebar-accent-foreground: 45 90% 80%;
+    --sidebar-border: 270 40% 25%;
+    --sidebar-ring: 42 85% 55%;
+  }
+
+  .dark {
+    --background: 270 60% 12%;
+    --foreground: 45 90% 65%;
+
+    --card: 270 55% 15%;
+    --card-foreground: 45 90% 70%;
+
+    --popover: 270 55% 15%;
+    --popover-foreground: 45 90% 70%;
+
+    --primary: 42 85% 55%;
+    --primary-foreground: 270 60% 8%;
+
+    --secondary: 270 45% 25%;
+    --secondary-foreground: 45 80% 80%;
+
+    --muted: 270 40% 20%;
+    --muted-foreground: 270 20% 70%;
+
+    --accent: 280 50% 30%;
+    --accent-foreground: 45 90% 80%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 40% 25%;
+    --input: 270 40% 25%;
+    --ring: 42 85% 55%;
+    
+    --sidebar-background: 270 55% 15%;
+    --sidebar-foreground: 45 90% 70%;
+    --sidebar-primary: 42 85% 55%;
+    --sidebar-primary-foreground: 270 60% 8%;
+    --sidebar-accent: 280 50% 30%;
+    --sidebar-accent-foreground: 45 90% 80%;
+    --sidebar-border: 270 40% 25%;
+    --sidebar-ring: 42 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  
+  .text-gold-light {
+    color: hsl(var(--gold-light));
+  }
+  
+  .bg-purple-deep {
+    background-color: hsl(var(--purple-deep));
+  }
+  
+  .bg-purple-rich {
+    background-color: hsl(var(--purple-rich));
+  }
+  
+  .bg-purple-mid {
+    background-color: hsl(var(--purple-mid));
+  }
+  
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .gradient-purple {
+    background: var(--gradient-purple);
+  }
+  
+  .gradient-diagonal {
+    background: var(--gradient-diagonal);
+  }
+  
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .shadow-deep {
+    box-shadow: var(--shadow-deep);
+  }
+  
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+  
+  .border-gold-light {
+    border-color: hsl(var(--gold-light) / 0.3);
+  }
+}
+
+/* Diagonal stripe pattern overlay */
+.stripe-pattern {
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent,
+    transparent 2px,
+    hsl(270 50% 25% / 0.1) 2px,
+    hsl(270 50% 25% / 0.1) 4px
+  );
+}
+
+/* Gold glow effect */
+.glow-gold {
+  text-shadow: 0 0 20px hsl(42 85% 55% / 0.4);
+}
+
+/* Geometric shape styles */
+.geometric-shape {
+  position: absolute;
+  border: 2px solid hsl(42 85% 55% / 0.4);
+  background: linear-gradient(135deg, hsl(270 55% 18% / 0.8), hsl(280 50% 25% / 0.6));
+  transform: skewX(-10deg);
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, 
+    hsl(42 85% 55%) 0%, 
+    hsl(45 90% 70%) 50%, 
+    hsl(42 85% 55%) 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
